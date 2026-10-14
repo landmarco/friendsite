@@ -37,3 +37,6 @@ jobs:
           folder: out
           branch: gh-pages
           clean: true
+          # Without this, GitHub Jekyll-processes the branch on deploy and
+          # silently drops the _next/ directory (underscore dirs are excluded)
+          nojekyll: true
