@@ -96,8 +96,8 @@ export default function Page() {
     <>
       <header className="ft-header">
         <div className="ft-wrap ft-header-inner">
-          <a className="ft-wordmark" href="#top" aria-label="Friendly Technologies — home">
-            Friendly <b>Technologies</b>
+          <a className="ft-wordmark" href="#top" aria-label="Friendly Technologies, LLC — home">
+            Friendly <b>Technologies</b>, LLC
           </a>
           <nav className="ft-nav" aria-label="Primary">
             <div className="ft-nav-links">
@@ -123,9 +123,6 @@ export default function Page() {
             tools efficiently.
           </p>
           <div className="ft-cta-row">
-            <a className="ft-btn" href={`mailto:${EMAIL}`}>
-              hello@friendlytechnologies.net →
-            </a>
             <a className="ft-btn ghost" href="#tools">
               See what we build
             </a>
