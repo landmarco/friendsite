@@ -26,7 +26,7 @@ const SERVICES = [
   {
     n: '02',
     title: 'End-to-end data products',
-    body: 'Ingestion, processing, modeling, evaluation, production deployment. We make your dreams for data analysis a reality.',
+    body: 'Ingestion, processing, modeling, evaluation, production deployment. We help you get your data ready to be useful.',
   },
   {
     n: '03',
