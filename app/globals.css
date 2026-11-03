@@ -313,14 +313,13 @@ a:hover {
   text-transform: uppercase;
   letter-spacing: 0.16em;
   color: var(--text-dim);
-  margin: 0 0 1.1rem;
+  margin: clamp(1.5rem, 3vw, 2rem) 0 1.1rem;
 }
 
 .ft-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
-  margin-bottom: clamp(1.5rem, 3vw, 2rem);
 }
 
 .ft-tag {

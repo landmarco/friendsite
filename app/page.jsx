@@ -130,14 +130,6 @@ export default function Page() {
         <section className="ft-wrap ft-section" id="services">
           <p className="ft-section-label">01 — What we do</p>
           <h2>Services</h2>
-          <p className="ft-cap-label">What we work with</p>
-          <div className="ft-tags">
-            {CAPABILITIES.map((item) => (
-              <span className="ft-tag" key={item}>
-                {item}
-              </span>
-            ))}
-          </div>
           <div className="ft-grid">
             {SERVICES.map((s) => (
               <article className="ft-card" key={s.n}>
@@ -145,6 +137,14 @@ export default function Page() {
                 <h3>{s.title}</h3>
                 <p>{s.body}</p>
               </article>
+            ))}
+          </div>
+          <p className="ft-cap-label">What we work with</p>
+          <div className="ft-tags">
+            {CAPABILITIES.map((item) => (
+              <span className="ft-tag" key={item}>
+                {item}
+              </span>
             ))}
           </div>
         </section>
