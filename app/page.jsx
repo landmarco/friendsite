@@ -4,7 +4,7 @@ const EMAIL = 'hello@friendlytechnologies.net'
 const LINKEDIN = 'https://www.linkedin.com/in/marc-loeffke-04326447/'
 const GITHUB = 'https://github.com/landmarco'
 
-const TICKER = [
+const CAPABILITIES = [
   'Data Ingestion',
   'ELT Pipelines',
   'Data Modeling',
@@ -20,18 +20,18 @@ const TICKER = [
 const SERVICES = [
   {
     n: '01',
-    title: 'Modernize the architecture',
-    body: 'Assess what you have, then move it somewhere maintainable. We modernize legacy data stacks into architecture your team can actually run and own.',
+    title: 'Modernize your architecture',
+    body: 'Help your databases scale before they become painful. We modernize legacy data stacks into architecture your team can easily maintain.',
   },
   {
     n: '02',
     title: 'End-to-end data products',
-    body: 'Ingestion, processing, modeling, evaluation, production deployment. We take a product from raw data to shipped and working.',
+    body: 'Ingestion, processing, modeling, evaluation, production deployment. We make your dreams for data analysis a reality.',
   },
   {
     n: '03',
     title: 'Practical machine learning',
-    body: 'Apply ML tools efficiently - and know when classical analytics is the smarter call. We build the least machinery that solves the problem.',
+    body: 'Apply ML tools efficiently - and know when classical analytics is the smarter call. Build only what you need and cut out the bloat.',
   },
   {
     n: '04',
@@ -40,34 +40,29 @@ const SERVICES = [
   },
 ]
 
-const STEPS = [
+const VALUES = [
   {
     n: '01',
-    title: 'Listen',
-    body: 'Understand the problem and the data before touching a pipeline.',
+    title: 'Trust',
+    body: 'Your data stays your data. We never collect it, and you keep full control of everything we touch.',
   },
   {
     n: '02',
-    title: 'Build',
-    body: 'Small, clean, working pieces. No speculation, no over-engineering.',
+    title: 'Libre and open source',
+    body: 'We default to free and open-source software in what we create and what we use - no black boxes, nothing that locks you in.',
   },
   {
     n: '03',
-    title: 'Evaluate',
-    body: 'Measure output against the real task - not a benchmark that flatters us.',
-  },
-  {
-    n: '04',
-    title: 'Deploy',
-    body: 'Ship to production, document it, and hand it off so your team owns it.',
+    title: 'Built to be yours',
+    body: 'Everything we build is yours to use, remix, and build on. We ship the keys along with the solution.',
   },
 ]
 
 const TOOLS = [
   {
-    name: 'Friendly Invisible Ink',
-    glyph: '◈',
-    body: 'Imperceptibly mark an image, video, or audio clip to determine provenance.',
+    name: 'Friendly Evals',
+    glyph: '✓',
+    body: 'Score RFP and NOFO proposals to align with evaluation criteria. Shorten proposal review process from months to minutes.',
   },
   {
     name: 'Friendly Minutes',
@@ -75,14 +70,14 @@ const TOOLS = [
     body: 'Meeting minutes generated from transcripts and agendas, styled to match your organization\u2019s voice.',
   },
   {
-    name: 'Friendly Evals',
-    glyph: '✓',
-    body: 'Score RFP and NOFO proposals to align with required evaluation criteria.',
+    name: 'Friendly Harness',
+    glyph: '▣',
+    body: 'AI harness that guides subagents to the efficient level of compute and helps the user understand their environmental impact.',
   },
   {
-    name: 'Friendly Photos',
-    glyph: '▣',
-    body: 'Manage and share photos privately.',
+    name: 'Friendly Invisible Ink',
+    glyph: '◈',
+    body: 'Imperceptibly mark an image, video, or audio clip to determine provenance.',
   },
   {
     name: 'Friendly Radio',
@@ -102,11 +97,12 @@ export default function Page() {
           <nav className="ft-nav" aria-label="Primary">
             <div className="ft-nav-links">
               <a href="#services">Services</a>
-              <a href="#approach">Approach</a>
               <a href="#tools">Tools</a>
               <a href="#contact">Contact</a>
             </div>
-            <ThemeSwitcher />
+            {/* Theme switcher hidden from visitors. Re-enable by uncommenting.
+                Dev-only: localStorage.setItem('ft-theme','violet') then reload. */}
+            {/* <ThemeSwitcher /> */}
           </nav>
         </div>
       </header>
@@ -122,26 +118,26 @@ export default function Page() {
             Friendly Technologies helps organizations modernize their data architecture and apply AI
             tools efficiently.
           </p>
+          {/* "See what we build" button commented out until it has a landing spot.
           <div className="ft-cta-row">
             <a className="ft-btn ghost" href="#tools">
               See what we build
             </a>
-          </div>
+          </div> */}
         </section>
-
-        {/* ---------- ticker ---------- */}
-        <div className="ft-ticker" aria-hidden="true">
-          <div className="ft-ticker-track">
-            {TICKER.map((item, i) => (
-              <span key={i}>{item}</span>
-            ))}
-          </div>
-        </div>
 
         {/* ---------- services ---------- */}
         <section className="ft-wrap ft-section" id="services">
           <p className="ft-section-label">01 — What we do</p>
           <h2>Services</h2>
+          <p className="ft-cap-label">What we work with</p>
+          <div className="ft-tags">
+            {CAPABILITIES.map((item) => (
+              <span className="ft-tag" key={item}>
+                {item}
+              </span>
+            ))}
+          </div>
           <div className="ft-grid">
             {SERVICES.map((s) => (
               <article className="ft-card" key={s.n}>
@@ -153,16 +149,16 @@ export default function Page() {
           </div>
         </section>
 
-        {/* ---------- approach ---------- */}
-        <section className="ft-wrap ft-section" id="approach">
-          <p className="ft-section-label">02 — How we work</p>
-          <h2>Approach</h2>
+        {/* ---------- values ---------- */}
+        <section className="ft-wrap ft-section" id="values">
+          <p className="ft-section-label">02 — Why friendly</p>
+          <h2>What makes our tech friendly</h2>
           <div className="ft-steps">
-            {STEPS.map((step) => (
-              <div className="ft-step" key={step.n}>
-                <span className="big">{step.n}</span>
-                <h3>{step.title}</h3>
-                <p>{step.body}</p>
+            {VALUES.map((v) => (
+              <div className="ft-step" key={v.n}>
+                <span className="big">{v.n}</span>
+                <h3>{v.title}</h3>
+                <p>{v.body}</p>
               </div>
             ))}
           </div>
